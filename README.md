@@ -1,9 +1,9 @@
 ### 操作步骤
 
 ```bash
-$ git clone ...
+$ git clone https://github.com/noteScript/noteScript.s.git
 
-$ cd ..
+$ cd noteScript.s
 
 $ pip install -r requirements.pip
 
