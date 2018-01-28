@@ -8,7 +8,7 @@ def test(*arguments):  # [list] --根据MongoDB.schema设计
     arv = arguments
     _t = 'type'
     try:
-        for x in arv[0].items():  # dict
+        for x in arv[0].items():  # dict->tup
             # continue if x[0] in arv[1] and isinstance(x[1], arv[1][_t]) else raise ValueError('参数类型错误！')
             if x[0] in arv[1] and isinstance(x[1], arv[1][_t]):
                 continue
