@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 # mongodb Model
 
-# import sys
+import sys
 from config import *  # db --MongoDB数据库实例
 import schema as _s  # mongodb Schema
 
-# sys.path.append("..")  # 增加上层‘‘模块’’目录
+sys.path.append("..")  # 增加上层‘‘模块’’目录
 from library import validator as _v  # 进行参数验证
 
-print(_v['test'])
+print(_v.test())
 
 
 class user:  # 用户
@@ -20,6 +20,10 @@ class user:  # 用户
         # print(self.__class__.__name__)
         self.db = db[self.__class__.__name__]  # 使用user集合，没有则自动创建
         return
+
+    def __del__(self):
+        self.db.close()
+        del self.db
 
     def insert(self, dict):  # 插入
         # self.db.save(self.data)
